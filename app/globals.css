@@ -1,0 +1,60 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-gray-900 bg-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-sky text-white font-display font-700 text-sm uppercase tracking-widest rounded hover:bg-sky-600 transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-white text-white font-display font-700 text-sm uppercase tracking-widest rounded hover:bg-white hover:text-navy transition-colors duration-200;
+  }
+
+  .btn-navy {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-navy text-white font-display font-700 text-sm uppercase tracking-widest rounded hover:bg-navy-600 transition-colors duration-200;
+  }
+
+  .section-heading {
+    @apply font-display font-800 text-3xl md:text-4xl text-navy uppercase tracking-wide;
+  }
+
+  .section-subheading {
+    @apply font-display font-700 text-xl md:text-2xl text-navy;
+  }
+
+  .wave-letter {
+    @apply font-display font-900 text-6xl md:text-8xl text-sky;
+  }
+}
+
+@layer utilities {
+  .font-700 {
+    font-weight: 700;
+  }
+  .font-800 {
+    font-weight: 800;
+  }
+  .font-900 {
+    font-weight: 900;
+  }
+  .tracking-widest-plus {
+    letter-spacing: 0.25em;
+  }
+}

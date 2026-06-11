@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Outer circle border -->
+  <circle cx="100" cy="100" r="96" fill="#1B3A6B" stroke="#4A9FD4" stroke-width="3"/>
+
+  <!-- Water waves at bottom third -->
+  <clipPath id="bottomClip">
+    <rect x="4" y="120" width="192" height="76" rx="0"/>
+  </clipPath>
+  <circle cx="100" cy="100" r="96" fill="#4A9FD4" clip-path="url(#bottomClip)"/>
+
+  <!-- Wave line -->
+  <path d="M4 120 Q25 110 50 120 Q75 130 100 120 Q125 110 150 120 Q175 130 196 120"
+        fill="none" stroke="white" stroke-width="2.5" opacity="0.6"/>
+
+  <!-- Boat hull -->
+  <path d="M55 105 Q100 118 145 105 L138 115 Q100 128 62 115 Z"
+        fill="white"/>
+
+  <!-- Boat deck / cabin -->
+  <rect x="78" y="88" width="44" height="18" rx="3" fill="white"/>
+  <rect x="84" y="82" width="32" height="8" rx="2" fill="#4A9FD4"/>
+
+  <!-- Windshield line -->
+  <line x1="84" y1="88" x2="84" y2="96" stroke="#1B3A6B" stroke-width="1.5"/>
+  <line x1="116" y1="88" x2="116" y2="96" stroke="#1B3A6B" stroke-width="1.5"/>
+
+  <!-- Wake lines -->
+  <path d="M62 115 Q50 120 35 118" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  <path d="M138 115 Q150 120 165 118" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  <path d="M62 120 Q45 126 28 123" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+  <path d="M138 120 Q155 126 172 123" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Top text: LAKE ANNA -->
+  <path id="topArc" d="M 22 100 A 78 78 0 0 1 178 100" fill="none"/>
+  <text font-family="Montserrat, Arial, sans-serif" font-size="16" font-weight="700" fill="white" letter-spacing="3">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">LAKE ANNA</textPath>
+  </text>
+
+  <!-- Bottom text: LAKE FOR ALL -->
+  <path id="bottomArc" d="M 26 108 A 74 74 0 0 0 174 108" fill="none"/>
+  <text font-family="Montserrat, Arial, sans-serif" font-size="13" font-weight="700" fill="white" letter-spacing="2">
+    <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">LAKE FOR ALL</textPath>
+  </text>
+
+  <!-- Center stars / dots decoration -->
+  <circle cx="57" cy="75" r="2" fill="#4A9FD4" opacity="0.8"/>
+  <circle cx="143" cy="75" r="2" fill="#4A9FD4" opacity="0.8"/>
+</svg>
