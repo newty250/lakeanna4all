@@ -1,27 +1,20 @@
 import { NextResponse } from 'next/server';
-import { fetchNewsWithAI, getFallbackNews } from '@/lib/anthropic';
+import { getFallbackNews } from '@/lib/anthropic';
+import { getStoredNews } from '@/lib/news';
 
 export const runtime = 'nodejs';
-export const dynamic = 'force-dynamic';
+export const revalidate = 604800;
 
 export async function GET() {
   if (process.env.NODE_ENV === 'development') {
     return NextResponse.json(getFallbackNews());
   }
 
-  if (!process.env.ANTHROPIC_API_KEY) {
-    return NextResponse.json(getFallbackNews());
-  }
-
   try {
-    const news = await fetchNewsWithAI();
-    return NextResponse.json(news, {
-      headers: {
-        'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
-      },
-    });
+    const news = await getStoredNews();
+    return NextResponse.json(news);
   } catch (error) {
-    console.error('News fetch failed:', error);
+    console.error('Failed to retrieve news:', error);
     return NextResponse.json(getFallbackNews());
   }
 }

@@ -7,7 +7,7 @@ import type { NewsCache } from '@/lib/types';
 export const metadata: Metadata = {
   title: 'News & Updates',
   description:
-    'AI-curated daily news on public lake access rights, watercraft regulations, waterway preservation, and boating safety across the United States.',
+    'AI-curated news on public lake access rights, watercraft regulations, waterway preservation, and boating safety across the United States.',
 };
 
 export const revalidate = 3600;
@@ -47,7 +47,7 @@ export default async function NewsPage() {
     <>
       <Hero
         title="News & Updates"
-        subtitle="AI-curated daily coverage of public lake access rights, watercraft regulations, waterway preservation, and boating safety across the United States."
+        subtitle="AI-curated coverage of public lake access rights, watercraft regulations, waterway preservation, and boating safety across the United States."
         variant="page"
       />
 
@@ -60,7 +60,7 @@ export default async function NewsPage() {
                 Feed generated on <span className="font-600 text-navy">{generatedDate}</span>
               </p>
               <p className="text-gray-400 text-xs mt-1">
-                Powered by Claude AI &bull; Refreshes daily at 7:00 AM UTC
+                Powered by Claude AI &bull; Refreshes weekly, Mondays at 7:00 AM UTC
               </p>
             </div>
             <div className="flex items-center gap-2 text-xs text-navy bg-white border border-sky-200 px-3 py-2 rounded-lg">
@@ -86,7 +86,7 @@ export default async function NewsPage() {
             <div className="text-center py-20">
               <p className="text-4xl mb-4">📰</p>
               <h3 className="font-display font-700 text-navy text-xl mb-2">No articles yet</h3>
-              <p className="text-gray-500">Check back soon — the feed refreshes daily.</p>
+              <p className="text-gray-500">Check back soon — the feed refreshes weekly.</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

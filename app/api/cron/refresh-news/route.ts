@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { fetchNewsWithAI, getFallbackNews } from '@/lib/anthropic';
+import { storeNews } from '@/lib/news';
 
 export const runtime = 'nodejs';
 
@@ -24,6 +25,7 @@ export async function GET(request: NextRequest) {
 
   try {
     const news = await fetchNewsWithAI();
+    await storeNews(news);
     return NextResponse.json({
       success: true,
       articleCount: news.articles.length,

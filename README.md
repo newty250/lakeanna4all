@@ -72,7 +72,7 @@ The News & Updates page is powered by an AI agent (`claude-haiku-4-5`) that uses
 - Waterway preservation and environmental policy
 - Boating safety and education
 
-The news feed refreshes daily at 7:00 AM UTC via a Vercel cron job. You can also trigger a manual refresh via the API endpoint.
+The news feed refreshes weekly, Monday at 7:00 AM UTC, via a Vercel cron job that stores results in Vercel KV. The public-facing news route only reads from that cache — it never calls the Anthropic API directly.
 
 ---
 
@@ -97,7 +97,7 @@ When Contentful credentials are not configured, the site falls back to placehold
 3. Add environment variables in the Vercel dashboard
 4. Deploy
 
-The `vercel.json` configures a daily cron job to refresh the news feed.
+The `vercel.json` configures a weekly cron job (Monday 7 AM UTC) to refresh the news feed.
 
 ---
 
@@ -106,7 +106,7 @@ The `vercel.json` configures a daily cron job to refresh the news feed.
 | Route | Description |
 |---|---|
 | `/` | Home with hero, WAVE program, news preview |
-| `/news` | AI-curated daily news feed |
+| `/news` | AI-curated news feed (refreshed weekly) |
 | `/lake-responsibly` | Boater safety rules and education |
 | `/take-action` | Advocacy resources and links |
 | `/membership` | Free membership signup |

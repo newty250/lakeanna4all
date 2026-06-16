@@ -13,6 +13,7 @@
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
     "@anthropic-ai/sdk": "^0.40.0",
+    "@vercel/kv": "^2.0.0",
     "contentful": "^10.0.0"
   },
   "devDependencies": {
