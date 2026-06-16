@@ -5,6 +5,10 @@ export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 export async function GET() {
+  if (process.env.NODE_ENV === 'development') {
+    return NextResponse.json(getFallbackNews());
+  }
+
   if (!process.env.ANTHROPIC_API_KEY) {
     return NextResponse.json(getFallbackNews());
   }

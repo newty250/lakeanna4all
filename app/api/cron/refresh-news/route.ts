@@ -4,6 +4,10 @@ import { fetchNewsWithAI, getFallbackNews } from '@/lib/anthropic';
 export const runtime = 'nodejs';
 
 export async function GET(request: NextRequest) {
+  if (process.env.NODE_ENV === 'development') {
+    return NextResponse.json({ skipped: true, reason: 'Development environment — no API calls' });
+  }
+
   const authHeader = request.headers.get('authorization');
   const expectedAuth = `Bearer ${process.env.CRON_SECRET}`;
 
