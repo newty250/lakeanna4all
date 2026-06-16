@@ -5,7 +5,7 @@ const client = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 });
 
-const MODEL = 'claude-sonnet-4-6';
+const MODEL = 'claude-haiku-4-5';
 
 const NEWS_PROMPT = `You are a news curator for Lake Anna Lake For All (lakeanna4all.org), a public lake access advocacy organization in Virginia.
 

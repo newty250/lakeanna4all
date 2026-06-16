@@ -14,7 +14,7 @@ Website for Lake Anna Lake For All (LFA) — a public lake access advocacy organ
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
 - **CMS:** Contentful
-- **AI News Feed:** Anthropic API (claude-sonnet-4-6)
+- **AI News Feed:** Anthropic API (claude-haiku-4-5)
 - **Deployment:** Vercel
 
 ---
@@ -65,7 +65,7 @@ Copy `.env.example` to `.env.local` and fill in:
 
 ## AI News Feed
 
-The News & Updates page is powered by an AI agent (`claude-sonnet-4-6`) that uses web search to find and curate the latest news about:
+The News & Updates page is powered by an AI agent (`claude-haiku-4-5`) that uses web search to find and curate the latest news about:
 
 - Public lake access rights and legislation
 - Wake surfing and watercraft regulations
